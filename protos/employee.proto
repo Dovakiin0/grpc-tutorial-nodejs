@@ -1,0 +1,33 @@
+// syntax version for this proto
+syntax = "proto3";
+
+// defining package for the proto
+// Used in both client and server to get the function inside a proto
+package employee;
+
+// defining a main service that is used to send and receive from client and server
+// this takes a request parameter and returns a response 
+service Employee{
+    rpc getDetails (EmployeeRequest) returns (EmployeeResponse) {}
+}
+
+// Defining the type of request
+// in this case it takes integer id as request
+message EmployeeRequest {
+    int32 id = 1;
+}
+
+// Defining the type for response
+// in this case it takes EmployeeDetails type
+message EmployeeResponse {
+    EmployeeDetails message = 1;
+}
+
+// type definition of EmployeeDetails
+// consisting of 4 data types
+message EmployeeDetails {
+    int32 id = 1;
+    string email = 2;
+    string firstName = 3;
+    string lastName = 4;
+}
