@@ -10,6 +10,7 @@ package employee;
 service Employee{
     rpc getDetails (EmployeeRequest) returns (EmployeeResponse) {}
     rpc getAll (Empty) returns (EmployeeRepeatedResponse) {}
+    rpc insert (EmployeeDetails) returns (EmployeeResponse) {}
 }
 
 // used to indicate that there is no request to be sent

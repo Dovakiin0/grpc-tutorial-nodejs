@@ -1,0 +1,8 @@
+POST http://localhost:3000/insert
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "firstName": "Dovah",
+    "lastName": "kiin"
+}

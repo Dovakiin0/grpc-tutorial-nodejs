@@ -4,6 +4,7 @@ const express = require("express");
 const client = require("./client");
 
 const path = require("path");
+const { employees } = require("./dummyEmp");
 
 const app = express();
 
@@ -16,6 +17,25 @@ app.use(
     extended: false,
   })
 );
+
+app.post("/insert", (req, res) => {
+  client.insert(
+    {
+      email: req.body.email,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+    },
+    (err, response) => {
+      if (!err) {
+        console.log("Success");
+        res.redirect("/");
+        console.log(response);
+      } else {
+        console.log(err.details);
+      }
+    }
+  );
+});
 
 app.get("/", (req, res) => {
   // Getting getAll function from the client

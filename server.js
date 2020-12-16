@@ -34,6 +34,13 @@ function getDetails(call, callback) {
   });
 }
 
+function insert(call, callback) {
+  let newrecord = call.request;
+  newrecord.id = 4;
+  employees.push(newrecord);
+  callback(null, { message: newrecord });
+}
+
 function getAll(call, callback) {
   callback(null, {
     message: employees,
@@ -49,6 +56,7 @@ function main() {
   server.addService(employeeProto.Employee.service, {
     getDetails: getDetails,
     getAll: getAll,
+    insert: insert,
   });
 
   server.bind("0.0.0.0:3001", grpc.ServerCredentials.createInsecure()); // Binds to a port -- createInsecure() is given to say there is no authentication in the server
