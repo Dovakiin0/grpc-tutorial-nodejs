@@ -5,9 +5,15 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Details
     body
-        h3 email: 
-            email= details.email
-        h3 first Name: 
-            fname= details.firstName
-        h3 last Name: 
-            lname= details.lastName
+        table(style="border:1px solid black; width:50%")
+            tr
+                th email 
+                th first Name 
+                th last Name 
+            tr
+                td 
+                    fname= details.firstName
+                td 
+                    lname= details.lastName
+                td 
+                    email= details.email

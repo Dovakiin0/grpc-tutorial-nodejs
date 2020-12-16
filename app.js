@@ -20,7 +20,11 @@ app.use(
 app.get("/", (req, res) => {
   // Getting getAll function from the client
   client.getAll({}, (err, response) => {
-    res.render("home", { details: response.message });
+    if (!err) {
+      res.render("home", { details: response.message });
+    } else {
+      console.log(err.details);
+    }
   });
 });
 
@@ -30,11 +34,16 @@ app.get("/:id", (req, res) => {
     this getDetails takes a id as parameter as we defined in the proto file then gives out a response needed.
   */
   client.getDetails({ id: req.params.id }, (err, response) => {
-    res.render("details", { details: response.message });
+    if (!err) {
+      res.render("details", { details: response.message });
+    } else {
+      console.log(err.details);
+    }
   });
 });
 
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-  console.log("Running on port " + PORT);
+  console.log(`Process ${process.pid} Running on port ` + PORT);
 });
