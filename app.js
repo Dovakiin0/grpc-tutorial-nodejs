@@ -18,25 +18,6 @@ app.use(
   })
 );
 
-app.post("/insert", (req, res) => {
-  client.insert(
-    {
-      email: req.body.email,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-    },
-    (err, response) => {
-      if (!err) {
-        console.log("Success");
-        res.redirect("/");
-        console.log(response);
-      } else {
-        console.log(err.details);
-      }
-    }
-  );
-});
-
 app.get("/", (req, res) => {
   // Getting getAll function from the client
   client.getAll({}, (err, response) => {
@@ -60,6 +41,26 @@ app.get("/:id", (req, res) => {
       console.log(err.details);
     }
   });
+});
+
+app.post("/insert", (req, res) => {
+  // Getting Insert function from the client
+  client.insert(
+    {
+      email: req.body.email,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+    },
+    (err, response) => {
+      if (!err) {
+        console.log("Success");
+        res.redirect("/");
+        console.log(response);
+      } else {
+        console.log(err.details);
+      }
+    }
+  );
 });
 
 const PORT = process.env.PORT || 3000;

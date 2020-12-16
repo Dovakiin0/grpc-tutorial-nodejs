@@ -59,7 +59,7 @@ function main() {
     insert: insert,
   });
 
-  server.bind("0.0.0.0:3001", grpc.ServerCredentials.createInsecure()); // Binds to a port -- createInsecure() is given to say there is no authentication in the server
+  server.bind("0.0.0.0:3001", grpc.ServerCredentials.createInsecure()); // Binds to a port -- createInsecure() is used when there is no authentication in the server
   console.log("RUNNING ON 3001");
   server.start();
 }
