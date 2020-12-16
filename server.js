@@ -34,13 +34,22 @@ function getDetails(call, callback) {
   });
 }
 
+function getAll(call, callback) {
+  callback(null, {
+    message: employees,
+  });
+}
+
 // running the actual server
 function main() {
   const server = new grpc.Server(); // instantiate a grpc server
 
   // Adding the service to server and declaring the user-defined function to the proto function
-  // getDetails is given to let the client know that it can use this function
-  server.addService(employeeProto.Employee.service, { getDetails: getDetails });
+  // getDetails and getAll is given to let the client know that it can use this function
+  server.addService(employeeProto.Employee.service, {
+    getDetails: getDetails,
+    getAll: getAll,
+  });
 
   server.bind("0.0.0.0:3001", grpc.ServerCredentials.createInsecure()); // Binds to a port -- createInsecure() is given to say there is no authentication in the server
   console.log("RUNNING ON 3001");

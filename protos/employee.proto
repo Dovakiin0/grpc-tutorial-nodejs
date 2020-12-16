@@ -9,7 +9,11 @@ package employee;
 // this takes a request parameter and returns a response 
 service Employee{
     rpc getDetails (EmployeeRequest) returns (EmployeeResponse) {}
+    rpc getAll (Empty) returns (EmployeeRepeatedResponse) {}
 }
+
+// used to indicate that there is no request to be sent
+message Empty {}
 
 // Defining the type of request
 // in this case it takes integer id as request
@@ -21,6 +25,12 @@ message EmployeeRequest {
 // in this case it takes EmployeeDetails type
 message EmployeeResponse {
     EmployeeDetails message = 1;
+}
+
+// the repeated means list or array
+// in this case we get all data from the dummy file which is in array
+message EmployeeRepeatedResponse {
+    repeated EmployeeDetails message = 1;
 }
 
 // type definition of EmployeeDetails

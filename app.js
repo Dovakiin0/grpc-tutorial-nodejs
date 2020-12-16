@@ -18,7 +18,10 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.render("home");
+  // Getting getAll function from the client
+  client.getAll({}, (err, response) => {
+    res.render("home", { details: response.message });
+  });
 });
 
 app.get("/:id", (req, res) => {

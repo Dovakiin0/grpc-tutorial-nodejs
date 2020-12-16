@@ -5,5 +5,11 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
-        h1 hello
+        each val in details
+            h3 email: 
+                email= val.email
+            h3 first Name: 
+                fname= val.firstName
+            h3 last Name: 
+                lname= val.lastName
         
