@@ -1,12 +1,6 @@
 ## BASIC GRPC-NODE TUTORIAL
-
-Clone the repository\
-on http
-```git clone https://github.com/Dovakiin0/grpc-tutorial-nodejs.git```
-<br>
-or ssh
-``` git clone git@github.com:Dovakiin0/grpc-tutorial-nodejs.git```
-<br>
+Fork the repository  
+Then clone into your machine
 
 run ```node server.js``` and ```node app.js``` <br>
 Used pug for templating.
