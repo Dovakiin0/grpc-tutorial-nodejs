@@ -13,7 +13,7 @@ Used pug to template on browser
 test it on your browser on <br>
 > localhost:3000
 <br>
-routes are
+routes are <br>
 > /{id}
 shows the specific result.
 <br>
