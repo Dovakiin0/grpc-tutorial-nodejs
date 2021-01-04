@@ -13,6 +13,7 @@ Used pug for templating.
 Test it on your browser on  
 > localhost:3000   
 ### Routes are  
+> / - gives all detail  
 > /id - gives you specific detail  
 > /insert - use postman or other tool to create new record  
 
