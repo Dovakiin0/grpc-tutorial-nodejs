@@ -1,6 +1,3 @@
-[![HitCount](http://hits.dwyl.com/Dovakiin0/grpc-tutorial-node.svg)](http://hits.dwyl.com/Dovakiin0/grpc-tutorial-node) 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
-
 ## BASIC GRPC-NODE TUTORIAL
 Fork the repository  
 Then clone into your machine
