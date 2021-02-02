@@ -1,3 +1,5 @@
+[![HitCount](http://hits.dwyl.com/Dovakiin0/grpc-tutorial-node.svg)](http://hits.dwyl.com/Dovakiin0/grpc-tutorial-node)
+
 ## BASIC GRPC-NODE TUTORIAL
 Fork the repository  
 Then clone into your machine
